@@ -65,7 +65,6 @@ def updateElement():
     new_email = input(f"Новий email [{found['email']}]: ") or found['email']
 
     students.remove(found)
-
     updated = {
         "name": new_name,
         "phone": new_phone,
@@ -79,7 +78,6 @@ def updateElement():
             pos += 1
         else:
             break
-
     students.insert(pos, updated)
     print("Дані студента оновлено.\n")
 
