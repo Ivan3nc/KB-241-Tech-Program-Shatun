@@ -21,9 +21,7 @@ def addNewElement():
     phone = input("Введіть телефон: ")
     group = input("Введіть групу: ")
     email = input("Введіть email: ")
-
     newItem = {"name": name, "phone": phone, "group": group, "email": email}
-
     pos = 0
     for item in students:
         if name > item["name"]:
@@ -38,12 +36,10 @@ def addNewElement():
 def deleteElement():
     name = input("Введіть ім'я студента для видалення: ")
     index = -1
-
     for item in students:
         if name == item["name"]:
             index = students.index(item)
             break
-
     if index == -1:
         print("Студента не знайдено.\n")
     else:
@@ -54,12 +50,10 @@ def deleteElement():
 def updateElement():
     name = input("Введіть ім'я студента, дані якого потрібно змінити: ")
     found = None
-
     for item in students:
         if name == item["name"]:
             found = item
             break
-
     if not found:
         print("Студента не знайдено.\n")
         return
@@ -93,7 +87,6 @@ def updateElement():
 def main():
     while True:
         choice = input("Оберіть дію [C - створити, U - оновити, D - видалити, P - показати, X - вийти]: ").lower()
-
         if choice == "c":
             addNewElement()
             printAllList()
