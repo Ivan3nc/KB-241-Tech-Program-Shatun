@@ -1,7 +1,3 @@
-# lab_01.py
-# Лабораторна робота №1. Списки. Словники. Кортежі.
-# Реалізація відсортованого телефонного довідника студентів групи.
-
 students = [
     {"name": "Bob", "phone": "0631234567", "group": "KB-241", "email": "bob@gmail.com"},
     {"name": "Emma", "phone": "0632345678", "group": "KB-241", "email": "emma@gmail.com"},
@@ -9,12 +5,10 @@ students = [
     {"name": "Zak", "phone": "0634567890", "group": "KB-241", "email": "zak@gmail.com"}
 ]
 
-
 def printAllList():
     for s in students:
         print(f"Ім'я: {s['name']}, Телефон: {s['phone']}, Група: {s['group']}, Email: {s['email']}")
     print()
-
 
 def addNewElement():
     name = input("Введіть ім'я студента: ")
@@ -32,7 +26,6 @@ def addNewElement():
     students.insert(pos, newItem)
     print("Студента додано.\n")
 
-
 def deleteElement():
     name = input("Введіть ім'я студента для видалення: ")
     index = -1
@@ -45,7 +38,6 @@ def deleteElement():
     else:
         del students[index]
         print("Студента видалено.\n")
-
 
 def updateElement():
     name = input("Введіть ім'я студента, дані якого потрібно змінити: ")
@@ -81,7 +73,6 @@ def updateElement():
     students.insert(pos, updated)
     print("Дані студента оновлено.\n")
 
-
 def main():
     while True:
         choice = input("Оберіть дію [C - створити, U - оновити, D - видалити, P - показати, X - вийти]: ").lower()
@@ -100,7 +91,6 @@ def main():
             break
         else:
             print("Невірний вибір.\n")
-
 
 if __name__ == "__main__":
     main()
