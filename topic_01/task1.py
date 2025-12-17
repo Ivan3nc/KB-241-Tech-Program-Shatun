@@ -1,3 +1,5 @@
-text = input("Введіть рядок: ")
-reversed_text = text[::-1]
-print("Рядок у зворотному порядку:", reversed_text)
+def reverse_text(text):
+    return text[::-1]
+
+s = input("Введіть рядок: ")
+print("Результат:", reverse_text(s))
