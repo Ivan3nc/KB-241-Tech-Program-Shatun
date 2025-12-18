@@ -3,7 +3,7 @@ from Student import Student
 from StudentList import StudentList
 from Utils import FileManager
 
-DEFAULT_FILENAME = "../lab_02/lab2.csv"
+DEFAULT_FILENAME = "lab2.csv"
 
 def main():
     student_list = StudentList()

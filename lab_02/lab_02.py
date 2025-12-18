@@ -1,8 +1,10 @@
 import csv
 import sys
+import os 
 
 student_list = []
-DEFAULT_FILENAME = "lab2.csv"
+script_dir = os.path.dirname(os.path.abspath(__file__))
+DEFAULT_FILENAME = os.path.join(script_dir, "lab2.csv")
 
 def load_from_file(file_name):
     global student_list
