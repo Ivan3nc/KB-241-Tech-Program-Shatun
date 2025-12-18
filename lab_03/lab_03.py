@@ -12,7 +12,7 @@ def main():
         file_name = sys.argv[1]
     else:
         file_name = DEFAULT_FILENAME
-    
+
     loaded_students = FileManager.load_from_file(file_name)
 
     for st in loaded_students:
