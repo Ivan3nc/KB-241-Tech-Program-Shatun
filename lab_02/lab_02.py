@@ -2,10 +2,8 @@ import csv
 import sys
 
 student_list = []
-# Ім'я файлу, яке буде використовуватись, якщо ми не вкажемо інше при запуску
 DEFAULT_FILENAME = "lab2.csv"
 
-#Завантажуємо дані з файлу при старті програми.
 def load_from_file(file_name):
     global student_list
     try:
@@ -19,7 +17,6 @@ def load_from_file(file_name):
         print(f"Файл '{file_name}' не знайдено. Починаємо з чистого аркуша.")
         student_list = []
 
-#Записуємо всі дані назад у файл перед виходом
 def save_to_file(file_name):
     try:
         with open(file_name, "w", newline='', encoding="utf-8") as csvfile:
@@ -31,14 +28,12 @@ def save_to_file(file_name):
     except Exception as e:
         print(f"Щось пішло не так при збереженні: {e}")
 
-#Пошук місця для студента в списку, щоб він завжди був відсортований за алфавітом
 def find_insert_position(name):
     for index, item in enumerate(student_list):
         if name < item["name"]:
             return index
     return len(student_list)
 
-#Додаємо нового студента в список
 def add_new_element():
     print("--- Додавання студента ---")
     name = input("Ім'я: ")
@@ -52,7 +47,6 @@ def add_new_element():
     student_list.insert(pos, new_item)
     print("Студента додано.")
 
-# Шукаємо студента за ім'ям і видаляємо, якщо знайшли
 def delete_element():
     name = input("Ім'я для видалення: ")
     for item in student_list:
@@ -62,7 +56,6 @@ def delete_element():
             return
     print("Такого студента немає.")
 
-# Видаляємо старий запис, а потім вставляємо оновлений
 def update_element():
     name = input("Ім'я для оновлення: ")
     for i, item in enumerate(student_list):
@@ -84,12 +77,11 @@ def update_element():
             return
     print("Не знайдено.")
 
-# Виводимо список всіх студентів на екран
 def print_all_list():
     print("--- Список студентів ---")
     for s in student_list:
         print(f"Name: {s['name']}, Phone: {s['phone']}, Group: {s['group']}, Email: {s['email']}")
-# Головна функція
+
 def main():
     if len(sys.argv) > 1:
         file_name = sys.argv[1]

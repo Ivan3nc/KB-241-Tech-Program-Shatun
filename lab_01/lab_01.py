@@ -2,31 +2,25 @@
 Лабораторна робота №1. Списки. Словники.
 """
 
-# Список студентів. Вже відсортований за полем "name".
 list_students = [
     {"name": "Bob", "phone": "0631234567", "group": "KB-241", "email": "bob@gmail.com"},
     {"name": "Emma", "phone": "0632345678", "group": "KB-241", "email": "emma@gmail.com"},
     {"name": "Jon", "phone": "0633456789", "group": "KB-241", "email": "jon@gmail.com"},
     {"name": "Zak", "phone": "0634567890", "group": "KB-241", "email": "zak@gmail.com"}
 ]
-
-#Службові функції
-#Сортує вставку нового студента за алфавітом 
+ 
 def findInsertPosition(name):
     for index, item in enumerate(list_students):
         if name < item["name"]:
             return index
     return len(list_students)
 
-#Пошук індексу студента у списку за його ім'ям 
 def findElementIndex(name):
     for index, item in enumerate(list_students):
         if name == item["name"]:
             return index
     return -1
 
-#Основні функції
-#Виводить на екран повний список студентів. 
 def printAllList():
     print("\n--- Поточний список студентів ---")
     for elem in list_students:
@@ -35,8 +29,7 @@ def printAllList():
         print(strForPrint)
     print("---------------------------------\n")
     return
-
-#Додає новий запіс, запитує дані у користувача  
+  
 def addNewElement():
     print("--- Додавання нового студента ---")
     name = input("Введіть ім'я студента: ")
@@ -49,7 +42,6 @@ def addNewElement():
     print("Новий елемент успішно додано.\n")
     return
 
-#Видаляє існуючий запис, пошук студента за ім'ям та видалення його зі списку
 def deleteElement():
     print("--- Видалення студента ---")
     name = input("Введіть ім'я студента для видалення: ")
@@ -61,7 +53,6 @@ def deleteElement():
         print(f"Елемент '{name}' видалено.\n")
     return
 
-#Оновлює запис, шляхом видалення старого та вставки нового
 def updateElement():
     print("--- Оновлення даних студента ---")
     name = input("Введіть ім'я студента, якого потрібно змінити: ")
@@ -93,7 +84,6 @@ def updateElement():
     print("Дані оновлено успішно.\n")
     return
 
-#Головна фунція, обробляє вибір користувача та викликає функції
 def main():
     while True:
         choice = input("Оберіть дію [C - create, U - update, D - delete, P - print, X - exit]: ")
