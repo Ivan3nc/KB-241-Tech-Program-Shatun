@@ -4,7 +4,6 @@ from student import Student
 from student_list import StudentList
 from utils import Utils
 
-# Ця функція робить введення даних простим і зручним
 def get_input(prompt, old_value=""):
     val = input(f"{prompt} [{old_value}]: ")
     return val if val else old_value
