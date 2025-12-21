@@ -4,6 +4,7 @@ import operations as ops
 def main():
     print("--- Модульний калькулятор ---")
     print("Напишіть 'exit' для виходу.")
+
     while True:
         n1 = ops.get_num("\nЧисло 1: ")
         if n1 == 'exit': break
